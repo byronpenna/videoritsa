@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,9 +60,15 @@
 <body>
 
 	Video <br>
+	<pre>
+		<?php 
+			//print_r($videoAnnotation);
+		?>
+	</pre>
+
 	<div class="container">
 		<iframe width="560" height="315" 
-		src="<?php echo $embedUrl; ?>" 
+		src="<?php echo $videoAnnotation->_video->getEmbedURL(); ?>" 
 		title="YouTube video player" 
 		frameborder="0" 
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
