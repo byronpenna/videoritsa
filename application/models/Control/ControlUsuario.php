@@ -6,6 +6,8 @@ class ControlUsuario extends CI_Model
 	function __construct()
 	{
 		parent::__construct();
+
+		$this->load->model("Entidades/Usuario");
 		$this->load->model("Entidades/Accesos/Rol");
 		$this->load->model("Entidades/Accesos/RolUsuario");
 	}
@@ -29,6 +31,22 @@ class ControlUsuario extends CI_Model
 		} catch (Exception $e) {
 			return null;
 		}
+	}
+	public function save(Usuario $user){
+		$returnObj = new stdClass();
+		$returnObj->status = false;
+		try{
+			$sql = "
+				insert into users(username,pass,people_id)
+				values('".$user->_usuario."',MD5('".$user->_pass."'),".$user->_persona->id.")
+			";
+
+			$this->db->query($sql);
+			$returnObj->status = true;
+		}catch(Exception $ex){
+
+		}
+		return $returnObj;
 	}
 	public function getRolesByUser($idUsuario){
 		try {

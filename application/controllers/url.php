@@ -26,11 +26,17 @@ class Url extends PadreController {
 	public function index($url){
 		$embedUrl = "https://www.youtube.com/embed/".$url;
 		$controlVideos = new RitsaVideosControl();
-		$user = unserialize($_SESSION["user"]);
+		$user = null;
+		if(isset($_SESSION["user"]) && $_SESSION["user"] != null){
+			$user = unserialize($_SESSION["user"]);
+		}
 		$videoInformation 		 = $controlVideos->getVideoFromUrl($url);
 		$controlAnnotation 		 = new AnnotationControl();
-		$videoAnnotation 		 = $controlAnnotation->getMessageByVideoAndUser($videoInformation->video->_id,$user->_idUsuario);
+		$videoAnnotation 		 = new AnnotationE();
 		$videoAnnotation->_video = $videoInformation->video;
+		if($user != null){
+			$videoAnnotation 		 = $controlAnnotation->getMessageByVideoAndUser($videoInformation->video->_id,$user->_idUsuario);
+		}
 		//$videoAnnotation = $
 
 		if(!$videoInformation->status){

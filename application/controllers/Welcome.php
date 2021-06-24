@@ -28,6 +28,8 @@ class Welcome extends PadreController {
 			$this->load->model("acciones/WelcomeModel");
 			$this->load->model("Entidades/Usuario");
 			$this->load->model("Entidades/Accesos/RolUsuario");
+			$this->load->model("Control/PeopleControl");
+
 			$this->load->library('session');
 			$this->_model = new WelcomeModel();
 		}
@@ -65,6 +67,34 @@ class Welcome extends PadreController {
 		public function testing(){
 			$this->load->view("url/welcome/testing.php");
 		}
+		// register maintenance 
+
+			public function register(){
+				$this->load->view("url/welcome/register");
+			}
+			public function saveRegister(){
+				$persona 				= new Persona();
+				$userE					= new Usuario();
+				$peopleControl 			= new PeopleControl();
+				$userControl 			= new ControlUsuario();
+				$persona->_nombres 		= $_POST['txtName'];
+				$persona->_apellidos 	= $_POST['txtLastname'];
+				$persona->_correo 		= $_POST["txtEmail"];
+
+				$control = $peopleControl->save($persona);
+				if($control->status){
+					$userE->_persona = new Persona();
+					$userE->_persona->_idPersona = $control->insertedID;
+					$userE->_usuario = $_POST["txtUserName"];
+					$userE->_pass = $_POST["txtPass"];
+					$control = $userControl->save($userE);
+					$control->mjs = "Save success";
+				}
+				echo "<pre>";
+					print_r($control);
+				echo "</pre>";
+
+			}
 		public function home(){
 			//require_once(APPPATH."models\Entidades\Usuario.php");
 			//$usuarioLogueado   =   $this->session->userdata("usuario");
