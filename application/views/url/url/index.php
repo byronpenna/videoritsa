@@ -8,55 +8,8 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<link href="/content/css/universales/style_v2.css">
 	<style type="text/css">
-		
-		nav > .nav.nav-tabs{
-
-		  border: none;
-		    color:#fff;
-		    background:#272e38;
-		    border-radius:0;
-
-		}
-		nav > div a.nav-item.nav-link,
-		nav > div a.nav-item.nav-link.active
-		{
-		  border: none;
-		    padding: 18px 25px;
-		    color:#fff;
-		    background:#272e38;
-		    border-radius:0;
-		}
-
-		nav > div a.nav-item.nav-link.active:after
-		 {
-		  content: "";
-		  position: relative;
-		  bottom: -60px;
-		  left: -10%;
-		  border: 15px solid transparent;
-		  border-top-color: #e74c3c ;
-		}
-		.tab-content{
-		  background: #fdfdfd;
-		    line-height: 25px;
-		    border: 1px solid #ddd;
-		    border-top:5px solid #e74c3c;
-		    border-bottom:5px solid #e74c3c;
-		    padding:30px 25px;
-		}
-
-		nav > div a.nav-item.nav-link:hover,
-		nav > div a.nav-item.nav-link:focus
-		{
-		  border: none;
-		    background: #e74c3c;
-		    color:#fff;
-		    border-radius:0;
-		    transition:background 0.20s linear;
-		}
-
-
 		.frmAddNote{
 			margin-left:auto; 
 			margin-right: auto;
@@ -77,23 +30,7 @@
 		    width:100%;
 		}
 
-		.navbarMenu{
-			background: #3b9ad7;
-			width: 100%;
-		}
-		.navbarMenu ul{
 
-			padding-top: 1%;
-			padding-bottom: 1%;
-		}
-		.navbarMenu li{
-			display: inline-block;
-			width: 30%;
-
-		}
-		.navbarMenu ul li a{
-			color: white;
-		}
 		
 	</style>
 </head>
@@ -108,6 +45,9 @@
 			if(isset($_SESSION["user"]) and $_SESSION["user"] != null){
 				$user = unserialize($_SESSION["user"]);
 			}
+		?>
+		<?php
+			//print_r($videoAnnotation);
 		?>
 	</pre>
 	<div class="container">

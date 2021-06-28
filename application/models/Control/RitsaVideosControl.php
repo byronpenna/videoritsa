@@ -35,7 +35,9 @@ class RitsaVideosControl extends CI_Model
 				SELECT * FROM `ritsa_videos` WHERE base_url = '".$url."';
 			";
 			$query = $this->db->query($sql);
-			foreach ($query->result() as $key => $row) {
+			$result = $query->result();
+
+			foreach ($result as $key => $row) {
 				$ritsaVideosE = new RitsaVideosE();
 				$status = $ritsaVideosE->getFromRowResult($row);
 				$returnObj->video = $ritsaVideosE;

@@ -36,6 +36,7 @@ class Url extends PadreController {
 		$videoAnnotation->_video = $videoInformation->video;
 		if($user != null){
 			$videoAnnotation 		 = $controlAnnotation->getMessageByVideoAndUser($videoInformation->video->_id,$user->_idUsuario);
+			$videoAnnotation->_video = $videoInformation->video;
 		}
 		//$videoAnnotation = $
 
