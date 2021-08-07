@@ -2,6 +2,7 @@
 //@session_start();
 defined('BASEPATH') OR exit('No direct script access allowed');
 include_once(APPPATH.'controllers/PadreController.php');
+
 class Welcome extends PadreController {
 
 	/**
@@ -25,11 +26,12 @@ class Welcome extends PadreController {
 		public function __construct(){
 			parent::__construct();
 			$this->load->helper('form');
+
 			$this->load->model("acciones/WelcomeModel");
 			$this->load->model("Entidades/Usuario");
 			$this->load->model("Entidades/Accesos/RolUsuario");
 			$this->load->model("Control/PeopleControl");
-
+			$this->load->model("Control/ControlUsuario");
 			$this->load->library('session');
 			$this->_model = new WelcomeModel();
 		}
@@ -73,6 +75,9 @@ class Welcome extends PadreController {
 				$this->load->view("url/welcome/register");
 			}
 			public function saveRegister(){
+				echo "<pre>";
+					print_r($_POST);
+				echo "</pre>";
 				$persona 				= new Persona();
 				$userE					= new Usuario();
 				$peopleControl 			= new PeopleControl();
@@ -82,13 +87,16 @@ class Welcome extends PadreController {
 				$persona->_correo 		= $_POST["txtEmail"];
 
 				$control = $peopleControl->save($persona);
+				echo "<pre>";
+					print_r($control);
+				echo "</pre>";
 				if($control->status){
-					$userE->_persona = new Persona();
-					$userE->_persona->_idPersona = $control->insertedID;
-					$userE->_usuario = $_POST["txtUserName"];
-					$userE->_pass = $_POST["txtPass"];
-					$control = $userControl->save($userE);
-					$control->mjs = "Save success";
+					$userE->_persona 				= new Persona();
+					$userE->_persona->_idPersona 	= $control->insertedID;
+					$userE->_usuario 				= $_POST["txtUserName"];
+					$userE->_pass 					= $_POST["txtPassword"];
+					$control 						= $userControl->save($userE);
+					$control->mjs 					= "Save success";
 				}
 				echo "<pre>";
 					print_r($control);

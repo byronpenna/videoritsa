@@ -1,5 +1,6 @@
-<?php 
+<?php
 
+include_once(APPPATH.'models/Control/ControlUsuario.php');
 class ControlUsuario extends CI_Model
 {
 	
@@ -38,7 +39,7 @@ class ControlUsuario extends CI_Model
 		try{
 			$sql = "
 				insert into users(username,pass,people_id)
-				values('".$user->_usuario."',MD5('".$user->_pass."'),".$user->_persona->id.")
+				values('".$user->_usuario."',MD5('".$user->_pass."'),".$user->_persona->_idPersona.")
 			";
 
 			$this->db->query($sql);

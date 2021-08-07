@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c2dc6e79-24c4-4b5c-8747-dc9754756f15" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/url.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/url.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Control/RitsaVideosControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Control/RitsaVideosControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/url/url/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/url/url/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Welcome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Control/ControlUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Control/ControlUsuario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/url/welcome/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/url/welcome/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +63,8 @@
       <workItem from="1623970524837" duration="1158000" />
       <workItem from="1624501950931" duration="608000" />
       <workItem from="1624753892875" duration="337000" />
-      <workItem from="1624826770438" duration="5557000" />
+      <workItem from="1624826770438" duration="6435000" />
+      <workItem from="1625432214323" duration="1937000" />
     </task>
     <servers />
   </component>

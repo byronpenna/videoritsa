@@ -17,18 +17,18 @@
 		<article class="card-body mx-auto" style="max-width: 400px;">
 			<h4 class="card-title mt-3 text-center">Create Account</h4>
 <!--			Form-->
-			<form action="<?php echo site_url("welcome/") ?>">
+			<form action="<?php echo site_url("welcome/saveRegister") ?>" method="post">
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-user"></i> </span>
 					</div>
-					<input  name="txtUserName" class="txtUserName form-control" placeholder="Nombres" type="text">
+					<input  name="txtName" class="txtName form-control" placeholder="Nombres" type="text">
 				</div>
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-user"></i> </span>
 					</div>
-					<input  name="txtUserName" class="txtUserName form-control" placeholder="Apellidos" type="text">
+					<input  name="txtLastname" class="txtLastname form-control" placeholder="Apellidos" type="text">
 				</div>
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
@@ -46,7 +46,7 @@
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 					</div>
-					<input class="txtPassword form-control" placeholder="Create password" type="password">
+					<input class="txtPassword form-control" name="txtPassword" placeholder="Create password" type="password">
 				</div> <!-- form-group// -->
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
